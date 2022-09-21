@@ -1,0 +1,34 @@
+<nav class="navbar navbar-light" style="background-color:rgb(222, 189, 227);">
+  <div class="container-fluid">
+    <img [src]=korisnik.slikaPutanja height="30px" width="30px" (click)="profil()" />
+    <form class="d-flex input-group w-auto">
+      <button class="btn btn-primary me-3" (click)="pocetna()" >Pocetna strana</button>
+      <button type="button" class="btn btn-primary px-3 me-2" (click)="odjava()">
+        Odjava
+      </button>
+    </form>
+  </div>
+</nav>
+
+<div style="text-align: center">
+  <h2>Istorija</h2>
+
+<table *ngIf="korisnik.istorija.length != 0" border="3" class="center">
+    <tr>
+        <th ><button class="btn btn-secondary" (click)="sortNaziv()">Naziv </button></th>
+        <th><button class="btn btn-secondary" (click)="sortAutor()">Autor/i</button></th>
+        <th><button class="btn btn-secondary" (click)="sortDZ()">Datum zaduzivanja</button></th>
+        <th><button class="btn btn-secondary" (click)="sortDV()">Datum vracanja</button></th>
+        <th>Detalji o knjizi</th>
+    </tr>
+    <tr *ngFor="let n of korisnik.istorija">
+        <td>{{n.naziv}}</td>
+        <td>{{n.autori}}</td>
+        <td>{{n.datum_zaduzivanja}}</td>
+        <td *ngIf="n.datum_vracanja">{{n.datum_vracanja}}</td>
+        <td *ngIf="!n.datum_vracanja">Nije vracena</td>
+        <td><button class="btn btn-secondary" (click)="detalji(n)">Detalji</button></td>
+    </tr>
+
+</table>
+</div>

@@ -1,0 +1,35 @@
+<div>
+  <nav class="navbar navbar-light" style="background-color: rgb(222, 189, 227)">
+    <div class="container-fluid">
+      <img [src]=korisnik.slikaPutanja height="35px" width="35px" (click)="profilna()"/>
+      <button class="btn btn-primary me-3" (click)="odjava()">
+        Odjava
+      </button>
+    </div>
+  </nav>
+  <br />
+</div>
+<div id="promena">
+  <table>
+    <tr>
+      <td>
+        <input type="password" placeholder="Stara lozinka" [(ngModel)]="stara_lozinka" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="password" placeholder="Nova lozinka" [(ngModel)]="nova_lozinka"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="password" placeholder="Ponovite novu lozinku" [(ngModel)]="nova_lozinka2"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button class="btn btn-primary" (click)="promeni_lozinku()">Promeni lozinku</button>
+      </td>
+    </tr>
+  </table>
+</div>

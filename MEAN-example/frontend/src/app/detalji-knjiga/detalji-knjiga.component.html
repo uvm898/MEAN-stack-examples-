@@ -1,0 +1,44 @@
+<nav class="navbar navbar-light" style="background-color: rgb(222, 189, 227)">
+  <div class="container-fluid">
+    <img
+      [src]="korisnik.slikaPutanja"
+      height="30px"
+      width="30px"
+      (click)="profilna()"
+    />
+    <form class="d-flex input-group w-auto">
+      <button class="btn btn-primary me-3" (click)="pocetna()">
+        Pocetna strana
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary px-3 me-2"
+        (click)="odjava()"
+      >
+        Odjava
+      </button>
+    </form>
+  </div>
+</nav>
+
+  <div *ngIf="true  " class="info">
+    <table>
+      <tr>
+        <td>
+          <img [src]="knjiga.slikaPutanja" class="imgSize" >
+        </td>
+        <td>
+          <p>Naziv: {{ knjiga.naziv }}</p>
+          <p>Autor/i: {{ knjiga.autori }}</p>
+          <p>Zanrovi: {{ knjiga.zanrovi }}</p>
+          <p>Izdavac: {{ knjiga.izdavac }}</p>
+          <p>Jezik: {{ knjiga.jezik }}</p>
+          <p>Kolicina: {{ knjiga.kolicina }}</p>
+          <p>
+            <button (click)="zaduzi()" class="btn btn-primary">Zaduzi knjigu</button>
+        </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+

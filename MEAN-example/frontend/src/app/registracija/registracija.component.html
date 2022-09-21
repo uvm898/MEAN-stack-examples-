@@ -1,0 +1,73 @@
+
+<div id="navigacioni_bar">
+  <nav class="navbar navbar-light" style="background-color:rgb(222, 189, 227);">
+    <div class="container-fluid">
+      <button class="btn btn-primary me-3" (click)="pocetna()">Pocetna strana</button>
+    </div>
+  </nav>
+  <br>
+  </div>
+
+  <div id="registraciona_forma">
+    <form [formGroup]="forma" (submit)="registruj()">
+      <div>
+        <input
+          type="text"
+          formControlName="korisnicko_ime"
+          placeholder="Korisnicko ime"
+        />
+      </div>
+      <div>
+        <input type="password" formControlName="lozinka" placeholder="Lozinka" />
+      </div>
+      <div>
+        <input
+          type="password"
+          formControlName="potvrda_lozinke"
+          placeholder="Potvrdi lozinku"
+        />
+      </div>
+      <div>
+        <input type="text" formControlName="ime" placeholder="Ime" />
+      </div>
+      <div>
+        <input type="text" formControlName="prezime" placeholder="Prezime" />
+      </div>
+      <div>
+        <input
+          type="text"
+          formControlName="adresa"
+          placeholder="Ulica,broj,grad"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          formControlName="telefon"
+          placeholder="Broj telefona"
+        />
+      </div>
+      <div>
+        <input type="email" formControlName="mejl" placeholder="Mejl" />
+      </div>
+      <div>
+        <button
+          type="button"
+          (click)="filepicker.click()"
+          class="btn btn-primary"
+        >
+          Prilozi sliku
+        </button>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-success">Registruj se</button>
+      </div>
+      <div>
+        <input type="file" #filepicker (change)="IzabranaSlika($event)" />
+      </div>
+      <div class = "image-preview" *ngIf="izabranaSlika!=null">
+      <img [src]= "izabranaSlika" [alt]= "forma.value.name">
+    </div>
+    </form>
+
+  </div>

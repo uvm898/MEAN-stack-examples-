@@ -1,0 +1,39 @@
+<nav class="navbar navbar-light" style="background-color: rgb(222, 189, 227)">
+  <img />
+  <div class="container-fluid">
+    <button type="button" class="btn btn-primary" (click)="pocetna()" *ngIf="!korisnik">
+      Pocetna strana
+    </button>
+    <img
+      [src]="korisnik.slikaPutanja"
+      height="30px"
+      width="30px"
+      (click)="profilna()"
+      *ngIf="korisnik"/>
+    <div>
+    <input type="text" placeholder="Naziv" [(ngModel)]="naziv"/>
+    <input type="text" placeholder="Autori" [(ngModel)]="autori"/>
+    <button class="btn btn-primary" (click)="pretrazi()">Pretrazi</button>
+    </div>
+      <button type="button" class="btn btn-link px-3 me-2" (click)="prijava()" *ngIf="!korisnik">
+        Prijava
+      </button>
+      <button type="button" class="btn btn-primary px-3 me-2" (click)="odjava()" *ngIf="korisnik">
+        Odjava
+      </button>
+  </div>
+</nav>
+<div class="center" *ngIf="knjige!=null" style="border-style: dashed;width: max-content;" >
+  <table *ngFor="let k of knjige">
+    <tr>
+      <td>
+        <img [src]="k.slikaPutanja" height="100px" (click)="detaljiKnjiga(k)">
+      </td>
+      <td>
+        {{k.naziv}}-{{k.autori}}
+        <br>
+        {{k.izdavac}}
+      </td>
+    </tr>
+  </table>
+</div>

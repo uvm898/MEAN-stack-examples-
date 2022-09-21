@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(18, 7, 3);
+  color:rgb(172, 153, 197);
+  height: 30px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+header {
+  text-align: center;
+  height: 30px;
+  padding: 3px;
+  background-color: rgb(18, 7, 3);
+  color:rgb(172, 153, 197);
+  position: sticky;
+  width: 100%;
+  top: 0;
+}
+html, body { height: 100%; background-color: rgb(172, 153, 197); }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

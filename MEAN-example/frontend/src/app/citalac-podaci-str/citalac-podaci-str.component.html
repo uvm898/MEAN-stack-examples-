@@ -1,0 +1,53 @@
+<nav class="navbar navbar-light" style="background-color:rgb(222, 189, 227);">
+  <div class="container-fluid">
+    <img [src]=korisnik.slikaPutanja height="30px" width="30px" />
+    <form class="d-flex input-group w-auto">
+      <button class="btn btn-primary me-3" (click)="promena_lozinke()" >Promena lozinke</button>
+      <button type="button" class="btn btn-primary px-3 me-2" (click)="odjava()">
+        Odjava
+      </button>
+    </form>
+  </div>
+</nav>
+
+<div id="podaci">
+  <form>
+    <table border="3">
+      <tr>
+        <td>
+          {{korisnik.korisnicko_ime}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{korisnik.ime}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{korisnik.prezime}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{korisnik.adresa}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{korisnik.telefon}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{korisnik.mejl}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img [src]="izabranaSlika" height="100px" width="100px"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

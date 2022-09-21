@@ -1,0 +1,11 @@
+.center{
+  text-align: center;
+  display: block;
+  margin-left: 35%;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.footer{
+  visibility: hidden;
+}

@@ -1,0 +1,33 @@
+<div>
+  <nav class="navbar navbar-light" style="background-color: rgb(222, 189, 227)">
+    <div class="container-fluid">
+      <button class="btn btn-primary me-3" (click)="pocetna()">
+        Pocetna strana
+      </button>
+      <button class="btn btn-primary me-3" (click)="registracija()">
+        Registracija
+      </button>
+    </div>
+  </nav>
+  <br />
+</div>
+
+<div id="prijava">
+  <table>
+    <tr>
+      <td>
+        <input type="text" placeholder="Korisnicko ime" [(ngModel)]="korisnicko_ime" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="password" placeholder="Lozinka" [(ngModel)]="lozinka"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button class="btn btn-primary" (click)="prijava()">Prijava</button>
+      </td>
+    </tr>
+  </table>
+</div>

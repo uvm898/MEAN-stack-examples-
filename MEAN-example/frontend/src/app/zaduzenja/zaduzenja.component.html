@@ -1,0 +1,46 @@
+<nav class="navbar navbar-light" style="background-color:rgb(222, 189, 227);">
+  <div class="container-fluid">
+    <img [src]=korisnik.slikaPutanja height="30px" width="30px" (click)="profil()" />
+    <form class="d-flex input-group w-auto">
+      <button class="btn btn-primary me-3" (click)="pocetna()" >Pocetna strana</button>
+      <button type="button" class="btn btn-primary px-3 me-2" (click)="odjava()">
+        Odjava
+      </button>
+    </form>
+  </div>
+</nav>
+
+<div *ngIf="korisnik && korisnik.zaduzene_knjige.length == 0" class="center">
+  <h2 style="font-size: 35px;"> Nema trenutnih zaduzenja</h2>
+</div>
+
+<div class="center" *ngIf="korisnik && korisnik.zaduzene_knjige.length!=0">
+  <h2>Zaduzenja</h2>
+  <div *ngFor="let n of korisnik.zaduzene_knjige" class="center">
+    <div class="card" style="width: 18rem;" class="center">
+        <img [src]="n.slikaPutanja" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{n.naziv}}</h5>
+            <p class="card-text">{{n.autori}}</p>
+            <p>BRDANA</p>
+            <button class="btn btn-primary" (click)="detalji(n)">Detalji</button>
+            <button class="btn btn-primary" (click)="vrati(n.id, n.datum_zaduzivanja)">Vrati knjigu</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div *ngFor="let n of korisnik.zaduzene_knjige" class="center">
+  <div class="card" style="width: 18rem;" class="center">
+      <img [src]="n.slikaPutanja" class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title">{{n.naziv}}</h5>
+          <p class="card-text">{{n.autori}}</p>
+          <p>broj dana</p>
+          <button class="btn btn-primary" (click)="detalji(n.id)">Detalji</button>
+          <button class="btn btn-primary" (click)="vrati(n.id, n.datum_zaduzivanja)">Vrati knjigu</button>
+      </div>
+  </div>
+</div> -->
+

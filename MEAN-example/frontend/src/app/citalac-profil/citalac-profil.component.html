@@ -1,0 +1,111 @@
+<nav class="navbar navbar-light" style="background-color: rgb(222, 189, 227)">
+  <div class="container-fluid">
+    <img
+      [src]="korisnik.slikaPutanja"
+      height="30px"
+      width="30px"
+      (click)="profilna()"
+    />
+
+      <button class="btn btn-primary" *ngIf="korisnik.tip=='moderator'" (click)="dodajKnjigu()">
+        Dodaj knjigu
+      </button>
+      <button class="btn btn-primary" (click)="zaduzenja()">
+        Zaduzenja
+      </button>
+      <button class="btn btn-primary" (click)="istorija()">
+        Istorija
+      </button>
+      <button class="btn btn-primary me-3" (click)="pretrazi()">Pretrazi biblioteku</button>
+      <button class="btn btn-primary me-3" (click)="promena_lozinke()">
+        Promena lozinke
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary px-3 me-2"
+        (click)="odjava()"
+      >
+        Odjava
+      </button>
+
+  </div>
+</nav>
+<div>
+  <table class="center">
+    <tr>
+      <td style="text-align: center">
+        <div>
+          <h4>
+            <u><i>Knjiga dana</i></u>
+          </h4>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div *ngIf="knjiga_dana">
+          <img
+            class="ms"
+            [src]="knjiga_dana.slikaPutanja"
+            height="100px"
+            width="100px"
+          />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">
+        <p>
+          <i>{{ knjiga_dana.naziv }}-{{ knjiga_dana.autori }}</i>
+        </p>
+        <p><i>Ocena:{{knjiga_dana.ocena}}</i></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 style="text-align: center">
+          <u><i>Top 3 knjige</i></u>
+        </h4>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: center; margin-left: 250px;">
+        <div style="text-align: center;padding-left:0%;">
+          <ngb-carousel *ngIf="knjige" style="font-size: 0;width: 220px;" >
+            <ng-template ngbSlide *ngIf="knjige && knjige.length > 0" >
+              <div class="picsum-img-wrapper">
+                <img
+                  [src]="knjige[0].slikaPutanja"
+                  alt="Random slide"
+                  height="250px"
+                  width="220px"
+                />
+              </div>
+            </ng-template>
+            <ng-template ngbSlide *ngIf="knjige && knjige.length > 0" >
+              <div class="picsum-img-wrapper">
+                <img
+                  [src]="knjige[1].slikaPutanja"
+                  alt="Random slide"
+                  height="250px"
+                  width="220px"
+                />
+              </div>
+            </ng-template>
+            <ng-template ngbSlide *ngIf="knjige && knjige.length > 0" >
+              <div class="picsum-img-wrapper">
+                <img
+                  [src]="knjige[2].slikaPutanja"
+                  alt="Random slide"
+                  height="250px"
+                  width="220px"
+                />
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+

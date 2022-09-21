@@ -1,0 +1,68 @@
+<nav class="navbar navbar-light" style="background-color: rgb(222, 189, 227)">
+  <img />
+  <div class="container-fluid">
+    <form class="d-flex input-group w-auto">
+      <button class="btn btn-primary me-3" (click)="pretrazi()">Pretrazi biblioteku</button>
+      <button type="button" class="btn btn-link px-3 me-2" (click)="prijava()">
+        Prijava
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary me-3"
+        (click)="registracija()"
+      >
+        Registracija
+      </button>
+    </form>
+  </div>
+</nav>
+<br />
+<div>
+  <table class="center">
+    <tr>
+      <th style="text-align: center">
+        <h4>
+          <u><i>Top 3 knjige</i></u>
+        </h4>
+      </th>
+    </tr>
+    <tr>
+      <td style="text-align: center">
+        <div>
+          <ngb-carousel *ngIf="knjige" style="font-size: 0;width: 420px;" >
+            <ng-template ngbSlide *ngIf="knjige && knjige.length > 0">
+              <div class="picsum-img-wrapper">
+                <img
+                  [src]="knjige[0].slikaPutanja"
+                  alt="Random slide"
+                  height="450px"
+                  width="420px"
+                />
+              </div>
+            </ng-template>
+            <ng-template ngbSlide *ngIf="knjige && knjige.length > 0">
+              <div class="picsum-img-wrapper">
+                <img
+                  [src]="knjige[1].slikaPutanja"
+                  alt="Random slide"
+                  height="450px"
+                  width="420px"
+                />
+              </div>
+            </ng-template>
+            <ng-template ngbSlide *ngIf="knjige && knjige.length > 0">
+              <div class="picsum-img-wrapper">
+                <img
+                  [src]="knjige[2].slikaPutanja"
+                  alt="Random slide"
+                  height="450px"
+                  width="420px"
+                />
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
